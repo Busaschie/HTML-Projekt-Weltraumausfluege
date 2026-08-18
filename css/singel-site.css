@@ -1,0 +1,21 @@
+.ds-footer {
+    bottom: 0;
+    position: initial;
+}
+.ds-footer a {
+    color: #707070;
+}
+.ds-footer a:hover {
+    color: #D40;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 0 10px 0 10px;
+}
+.ds-icon {
+    color: #37A;
+    font-size: 1em;
+    padding-right: 20px;
+}
+.ds-nav-link:hover i {
+    color: #FFF;
+}

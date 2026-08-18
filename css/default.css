@@ -1,0 +1,1110 @@
+/* ═══════════════════════════════════════════════════════════════
+   default.css  –  LittleSpaceMan Hauptstylesheet
+   Schriftart: Raleway (Google Fonts)
+   Farbpalette:
+     Primärblau  #336699 / #37A / #348ABF
+     Dunkelblau  #001828 / rgba(18,43,62,...)
+     Grün (valid) #2e7d5e
+     Grau (Text)  #707070 / #9e9e9e
+   Breakpoints:
+     xs  ≤ 480px  |  sm ≤ 540px  |  md ≤ 767/768px
+     lg  ≤ 991px  |  xl ≥ 1200px
+═══════════════════════════════════════════════════════════════ */
+
+/* Google Fonts: Raleway in den Schnitten 100–900 */
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
+
+
+/* ═══════════════════════════════════════════════════════════════
+   BASIS-RESET & BODY
+   Schrift, Grundfarbe, kein horizontaler Überlauf
+═══════════════════════════════════════════════════════════════ */
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
+  color: #707070;         /* Standard-Textfarbe (mittelgrau) */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;     /* Kein horizontales Scrollen */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   LINKS
+   Standardfarbe, Hover/Focus-Farbe, kein Unterstrich
+═══════════════════════════════════════════════════════════════ */
+a {
+  transition: all 0.3s ease;
+  color: #348ABF;
+  text-decoration: none;
+}
+
+/* Reduzierte Bewegung: smooth scroll deaktivieren
+   (verhindert Konflikte mit jQuery-Smooth-Scroll) */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: auto !important;
+  }
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #D40;            /* Orange-Rot beim Hover */
+}
+
+a:focus {
+  outline: none;          /* Kein Browser-Standard-Fokusrahmen */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ALLGEMEINE UTILITY-KLASSEN
+═══════════════════════════════════════════════════════════════ */
+
+/* Bootstrap-Override: einheitliches Button-Padding */
+.btn {
+  padding: 8px 32px;
+}
+.btn:hover {
+  background-color: #ced4da;
+}
+
+/* Zitat-Block: kleinere Schrift, großzügiger Zeilenabstand */
+blockquote {
+  font-size: 0.86em;
+  line-height: 1.8em;
+}
+
+/* Sektions-Abstand: oberer und unterer Innenabstand für alle Hauptsektionen */
+.ds-section-pad-top {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+/* Inhalts-Box innerhalb einer Sektion (Bootstrap-Row) */
+.ds-content-box {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Primäre Textfarbe (Überschriften, Icons) */
+.ds-text-primary {
+  color: #37A;
+}
+
+/* Etwas größere Schrift für den Hero-Bereich */
+.ds-font-big {
+  font-size: 1.25rem;
+}
+
+/* Primärer CTA-Button (blauer Hintergrund, weißer Text) */
+.ds-btn-primary {
+  color: white;
+  background-color: #336699;
+  padding: 14px 30px;
+}
+.ds-btn-primary:hover,
+.ds-btn-primary:focus {
+  color: white;
+  background-color: #348ABF;  /* Helleres Blau beim Hover */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR
+   Fixiert oben; halbtransparent im Hero-Bereich;
+   wechselt zu weißem Hintergrund wenn gescrollt wird
+   (JS fügt Klasse "scroll" ab 120px hinzu)
+═══════════════════════════════════════════════════════════════ */
+.ds-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;                          /* Immer über allen anderen Elementen */
+  background-color: rgba(20, 40, 60, 0.7); /* Dunkles Halbtransparent im Hero */
+  transition: all 0.3s ease;
+}
+
+/* Logo-Bild standardmäßig ausgeblendet (nur beim Scroll sichtbar) */
+.ds-navbar img {
+  display: none;
+}
+
+/* Scrolled-Zustand: weißer Hintergrund mit feiner Trennlinie */
+.ds-navbar.scroll {
+  background-color: white;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Logo-Bild einblenden wenn gescrollt */
+.ds-navbar.scroll img {
+  display: inline;
+}
+
+/* Markenname / Firmenname in der Navbar */
+.navbar-brand {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Feste Breite für Logo+Name-Bereich */
+.ds-brand {
+  width: 250px;
+}
+
+/* Markenname: Blau beim Hover (immer) */
+.navbar-brand:hover,
+.ds-navbar.scroll .navbar-brand:hover {
+  color: #348ABF;
+}
+
+/* Markenname: Dunkelblau im Scroll-Zustand */
+.ds-navbar.scroll .navbar-brand {
+  color: #336699;
+}
+
+/* Bootstrap-Override: kein Listenpunkt bei Nav-Items */
+.nav-item {
+  list-style: none;
+}
+
+/* Nav-Link: weiß im Hero-Bereich */
+.ds-nav-link {
+  color: white;
+}
+
+/* Nav-Link: Dunkelblau wenn gescrollt */
+.ds-navbar.scroll .ds-nav-link {
+  color: #336699;
+}
+
+/* Nav-Link Hover & aktiver Link (.current per JS gesetzt):
+   weißer Text auf blauem Hintergrund */
+.ds-navbar.scroll .ds-nav-link:hover,
+.ds-navbar.scroll .ds-nav-link.current,
+.ds-nav-link:hover {
+  color: #FFF;
+  background-color: #336699;
+}
+
+/* Hamburger-Button (mobil): weißer Rahmen auf dunklem Hintergrund */
+.navbar-toggler {
+  border: 1px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Hamburger-Icon: weiß, leicht nach unten versetzt */
+.navbar-toggler-icon {
+  color: white;
+  padding-top: 6px;
+}
+
+/* Hamburger-Button im Scroll-Zustand: grauer Rahmen */
+.ds-navbar.scroll .navbar-toggler {
+  border: 1px solid #707070;
+}
+
+/* Hamburger-Icon im Scroll-Zustand: grau */
+.ds-navbar.scroll .navbar-toggler-icon {
+  color: #707070;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO-SEKTION (#home)
+   Vollbild-Hintergrundbereich mit Parallax-Bild;
+   Hintergrundbild-Position per JS dynamisch angepasst
+═══════════════════════════════════════════════════════════════ */
+#home {
+  background-color: #222;                        /* Fallback wenn Bild nicht lädt */
+  background-image: url(../images/bg-hero-2.webp);
+  background-repeat: no-repeat;
+  height: 100vh;                                 /* Volle Fensterhöhe */
+  min-height: 375px;                             /* Mindesthöhe für sehr kleine Fenster */
+  position: relative;
+}
+
+/* Sehr breite und hohe Bildschirme: Bild vollständig skalieren */
+@media (min-height: 600px) and (min-width: 1920px) {
+  #home {
+    background-size: cover;
+  }
+}
+
+/* Hintergrundbild-Position abhängig von Fensterhöhe
+   (Koordiniert mit der JS-Funktion getOffSet()) */
+@media (min-height: 830px) {
+  #home { background-position: center -210px; }
+}
+@media (min-height: 680px) and (max-height: 829px) {
+  #home { background-position: center -300px; }
+}
+@media (min-height: 500px) and (max-height: 679px) {
+  #home { background-position: center -400px; }
+}
+@media (max-height: 499px) {
+  #home { background-position: center -450px; }
+}
+
+/* Zentriert den Hero-Text-Block vertikal und horizontal */
+.ds-hero-text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+/* Innerer Container: leicht nach oben versetzt (Navbar-Ausgleich) */
+.ds-hero-text-container-inner {
+  margin-top: -90px;
+  z-index: 100;
+}
+
+/* Großer Firmenname-Titel mit Textschatten für Lesbarkeit */
+.ds-hero-title {
+  font-size: 3.5rem;
+  text-shadow: 3px 3px 3px black;
+}
+
+/* Slogan-Text mit leichtem Schatten */
+.ds-hero-subtitle {
+  text-shadow: 2px 1px 1px black;
+}
+
+/* Scroll-Pfeil-Container: absolut positioniert über dem unteren Rand */
+.ds-intro-next {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  border-radius: 5px;
+}
+
+/* Bei sehr flachen Fenstern: weniger Abstand nach oben/unten */
+@media (max-height: 480px) {
+  .ds-hero-text-container-inner {
+    margin-top: -40px;
+  }
+  .ds-intro-next {
+    bottom: 20px;
+  }
+}
+
+/* Scroll-Pfeil-Link: als Block, mit Abstand nach oben */
+.ds-down-arrow-link {
+  display: block;
+  margin-top: 18%;
+}
+
+/* Scroll-Pfeil-Icon: blaues Rechteck mit weißem Pfeil;
+   vergrößert sich beim Hover (visuelles Feedback) */
+.ds-down-arrow {
+  color: #FFF;
+  cursor: pointer;
+  background: #357;             /* Dunkelblau */
+  padding: 20px 49px 20px 20px; /* Asymmetrisch: optisch zentrierter Pfeil */
+  transition: all 0.5s ease;
+  border-radius: 5px;
+}
+.ds-down-arrow:hover,
+.ds-down-arrow:focus {
+  color: #FFF;
+  background: #37A;             /* Helleres Blau beim Hover */
+  padding: 30px 59px 30px 30px; /* Vergrößerter Pfeil-Button */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ALLGEMEINE SEKTIONS-ELEMENTE
+   Wiederverwendbar in mehreren Sektionen
+═══════════════════════════════════════════════════════════════ */
+
+/* Große Sektionsüberschriften (h2-Ebene) */
+.ds-section-title {
+  font-size: 2.6rem;
+  font-weight: normal;
+}
+
+/* Standardtext innerhalb von Sektionen */
+.ds-intro-text {
+  font-size: 1.2rem;
+}
+
+/* FontAwesome-Icon: als Block zentriert, in Primärblau */
+.ds-icon {
+  display: block;
+  color: #37A;
+  font-size: 3em;
+}
+
+/* Abstand vor einem CTA-Button ("Jetzt informieren" etc.) */
+.ds-continue {
+  padding: 20px 0 30px 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   MISSIONEN-SEKTION (#missionen)
+   Parallax-Hintergrundbild; weiße Schrift
+   background-size wird zweimal definiert – 120% gewinnt (letzter Wert)
+═══════════════════════════════════════════════════════════════ */
+#missionen {
+  color: white;
+  background-image: url(../images/bg-mission-2.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 120%;   /* Überschreibt cover → Bild 120% breit */
+  position: relative;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   JOBS-SEKTION (#jobs)
+   Eigenes Hintergrundbild; weiße Schrift;
+   Karten mit Rahmen und halbtransparentem Hintergrund
+═══════════════════════════════════════════════════════════════ */
+#jobs {
+  color: white;
+  background-image: url(../images/bg-jobs-2.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+/* Job-Karte: blauer Rahmen, abgerundete Ecken, halbtransparenter Hintergrund */
+.jobs-border {
+  border: #37a solid 1px;
+  border-radius: 10px;
+  background-color: rgba(18, 43, 62, 0.5);
+  padding: 10px !important;  /* !important übersteuert Bootstrap-Padding */
+}
+
+/* Einzelne Benefit-Zeile (z.B. "50 Tage Urlaub") */
+.jobs-benefits {
+  border: #37a solid 1px;
+  border-radius: 10px;
+  background-color: rgb(18, 43, 62);  /* Solide, kein Transparenzeffekt */
+  padding: 5px;
+  margin-bottom: 10px;
+  color: #9e9e9e;                     /* Helles Grau für lesbare Darstellung */
+}
+
+/* Geschlechts-Angabe "(m/w/d)" neben dem Jobtitel: kleiner */
+.jobs-gender {
+  font-size: small;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   NEWS & EVENTS-SEKTION (#news)
+   Eigenes Hintergrundbild; Karten mit Rahmen;
+   farbliche Unterscheidung zwischen News (grün) und Events (orange)
+═══════════════════════════════════════════════════════════════ */
+#news {
+  color: white;
+  background-image: url(../images/bg-news.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+/* Gemeinsamer Rahmen für alle News/Event-Karten */
+.news-border {
+  border: #37a solid 1px;
+  border-radius: 10px;
+  padding: 10px !important;
+}
+
+/* News-Karte: grünlich (Erfolg/Meldung) */
+.news-news {
+  background-color: rgba(33, 62, 18, 0.3);
+}
+
+/* Event-Karte: orange (Ankündigung/Termin) */
+.news-events {
+  background-color: rgba(62, 43, 18, 0.3);
+}
+
+/* Bild links im Fließtext; shape-outside lässt Text um Bild fließen */
+.news-round-left {
+  float: left;
+  shape-outside: circle(50%);
+  margin: 10px;
+}
+
+/* Bild rechts im Fließtext; shape-outside lässt Text um Bild fließen */
+.news-round-right {
+  float: right;
+  shape-outside: circle(50%);
+  margin: 10px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HILFS-KLASSEN FÜR SEKTIONEN
+═══════════════════════════════════════════════════════════════ */
+
+/* Relativer Container für z-Index-Stacking (Team-Sektion) */
+.ds-content {
+  position: relative;
+  z-index: 100;
+}
+
+/* Halbtransparentes Overlay über Hintergrundbildern
+   (aktuell deaktiviert per _background in #contact) */
+.ds-bg-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   TEAM-KARUSSELL (Slick Slider)
+   Begrenzung der Gesamtbreite; Abstände zwischen Karten
+═══════════════════════════════════════════════════════════════ */
+
+/* Äußerer Wrapper des Slick-Karussells */
+.carousel {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Einzelne Karte (figure-Element): Bild + Zitat + Name */
+.ds-item {
+  max-width: 290px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+/* Profilbild: kreisförmig, Abstand nach unten */
+.ds-item img {
+  border-radius: 50%;
+  margin-bottom: 35px;
+}
+
+/* Name unter dem Profilbild: rechtsbündig, kursiv */
+.ds-item figcaption {
+  text-align: right;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE HINTERGRUNDBILDER (mobile)
+   Unter 991px: ein gemeinsames leichteres Mobilbild für
+   Missionen, News und Jobs; Icons etwas kleiner
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  #missionen, #news, #jobs {
+    background-image: url(../images/bg-mobile.webp);  /* Kleineres Mobilbild */
+  }
+  .ds-icon {
+    display: block;
+    color: #37A;
+    font-size: 2em;   /* Kleiner als Desktop (3em) */
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   GALERIE-SEKTION
+   Slick Slider + Magnific Popup Lightbox;
+   Hover-Effekt "Honey" auf den Bildkacheln
+═══════════════════════════════════════════════════════════════ */
+
+/* Beschreibungstext über der Galerie */
+.ds-section-desc {
+  max-width: 900px;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+/* Slider-Container: großzügige vertikale Abstände für Slick-Dots */
+.ds-gallery-container {
+  padding-top: 70px;
+  padding-bottom: 120px;   /* Platz für Slick-Punkte unten */
+}
+
+/* Einzelne Galerie-Kachel: seitliche Abstände */
+.ds-gallery-item {
+  margin: 0 15px;
+}
+
+/* Slick-Dots-Position: weiter unten als Standard */
+.slick-dots {
+  bottom: -65px;
+}
+
+/* Mehr Abstand zwischen den Dots */
+.slick-dots li {
+  margin: 0 13px;
+}
+
+/* Galerie-Dots: Blau wenn aktiv/hover */
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before,
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #3ba0dd;
+}
+
+/* Team-Karussell-Dots: Dunkelblau (eigene Farbe) */
+.carousel .slick-dots li button:before {
+  color: #335577;
+  opacity: 0.5;
+}
+.carousel .slick-dots li button:hover:before,
+.carousel .slick-dots li button:focus:before,
+.carousel .slick-dots li.slick-active button:before {
+  color: #335577;
+  opacity: 1;   /* Volle Deckkraft wenn aktiv */
+}
+
+/* Dot-Größe erhöht (Standard wäre ca. 10px) */
+.slick-dots li button:before {
+  font-size: 18px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   GALERIE HOVER-EFFEKTE (CSS Grid + figure)
+   Gemeinsame Basis-Styles für alle Hover-Effekte
+═══════════════════════════════════════════════════════════════ */
+
+/* Grid-Container: figures nebeneinander (float) */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;         /* Überlaufende Inhalte bei Animationen abschneiden */
+  background: #3085a3;      /* Sichtbar wenn Bild transparent wird */
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Bild: leicht transparent für Hover-Effekt-Sichtbarkeit */
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+/* Beschriftungs-Layer: überlagert das Bild absolut */
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;  /* Verhindert Flackern bei 3D-Transformationen */
+}
+
+/* Pseudo-Elemente der figcaption sollen nicht anklickbar sein */
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+/* figcaption und Link-Overlay: decken die gesamte figure ab */
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Unsichtbarer Link-Overlay über der ganzen Kachel
+   (für Barrierefreiheit und Klickbereich) */
+.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;   /* Text ausblenden (off-screen) */
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+/* Bildtitel: leichtes Gewicht, etwas enger */
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+/* Hervorgehobener Teil des Bildtitels (span) */
+.grid figure h2 span {
+  font-weight: 600;
+}
+
+/* Kein Außenabstand bei Überschrift und Absatz */
+.grid figure h2,
+.grid figure p {
+  margin: 0;
+}
+
+/* Untertitel-Text der Galerie-Kachel */
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HOVER-EFFEKT: "HONEY"
+   Beim Hover: Bild verblasst, ein blauer Balken fährt von unten
+   ein, und der Bildtitel schiebt sich sichtbar nach oben
+═══════════════════════════════════════════════════════════════ */
+
+/* figure-Basis: violetter Hintergrund (sichtbar wenn Bild verblasst) */
+figure.effect-honey {
+  background: #4a3753;
+  max-width: 220px;
+}
+
+/* Bild voll sichtbar im Ruhezustand */
+figure.effect-honey img {
+  opacity: 1;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+/* Bild beim Hover stark abblenden */
+figure.effect-honey:hover img {
+  opacity: 0.4;
+}
+
+/* Blauer Balken am unteren Rand (::before);
+   im Ruhezustand 10px nach unten ausgeblendet */
+figure.effect-honey figcaption::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: #38C;
+  content: "";
+  -webkit-transform: translate3d(0, 10px, 0);
+  transform: translate3d(0, 10px, 0);
+}
+
+/* Bildtitel: im Ruhezustand 30px nach oben verschoben (unsichtbar) */
+figure.effect-honey h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1em 1.5em;
+  width: 100%;
+  text-align: left;
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
+}
+
+/* h2 > i (kursiver Untertitel): unsichtbar und nach oben versetzt */
+figure.effect-honey h2 i {
+  font-style: normal;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
+}
+
+/* Gemeinsame Transition für Balken und Titel */
+figure.effect-honey figcaption::before,
+figure.effect-honey h2 {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+}
+
+/* Hover: Balken und Titel fahren in Position (translate 0,0);
+   Titel und Untertitel werden sichtbar */
+figure.effect-honey:hover figcaption::before,
+figure.effect-honey:hover h2,
+figure.effect-honey:hover h2 i {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Galerie-Sektions-Container: etwas Abstand nach oben */
+.ds-container-gallery {
+  padding-top: 30px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   KONTAKT-SEKTION (#contact)
+   Dunkler Hintergrund; enthält Formular und Kontaktdaten;
+   Hintergrundbild deaktiviert (_background-image)
+═══════════════════════════════════════════════════════════════ */
+#contact {
+  color: white;
+  background-color: #001828;                          /* Sehr dunkles Blau */
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 980px;
+  position: relative;
+  padding-bottom: 50px;
+  padding-top: 100px;   /* Platz für fixierte Navbar */
+}
+
+/* Kontakt-Daten-Eintrag (E-Mail, Adresse, Telefon): linker Abstand */
+.contact-item {
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+
+/* Kontakt-Link: Icon und Text nebeneinander zentriert */
+.item-link {
+  display: flex;
+  align-items: center;
+}
+
+/* Icon und Text-Span: weiß mit weicher Transition */
+.item-link i,
+.item-link span {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hover: Blau für Icon und Text */
+.item-link:hover i,
+.item-link:hover span {
+  color: #3496d8;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   KONTAKTFORMULAR
+   Zweispaltiges Grid-Layout (Label | Feld);
+   CSS-Validierungsfarben (grün = gültig, blau = ungültig)
+═══════════════════════════════════════════════════════════════ */
+
+/* Formularzeile: Label links (200px), Eingabefeld rechts (flexibel) */
+.form-group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 0 1.5rem;
+}
+
+/* Letzte Formularzeile: keine untere Trennlinie */
+.form-group:last-of-type {
+  border-bottom: none;
+}
+
+/* Label-Text: weiß, etwas gesperrt, oben ausgerichtet */
+.form-group > label {
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  padding-top: 0.6rem;
+  line-height: 1.4;
+}
+
+/* Eingabefeld-Basis (input, select, textarea):
+   transparenter Hintergrund auf dunklem Abschnitt */
+.form-control {
+  font-size: inherit;
+  margin: 0 0 20px 0;
+  width: 90%;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+/* Placeholder: weiß und kursiv */
+.form-control::placeholder {
+  color: #fff;
+  font-style: italic;
+}
+
+/* Dropdown-Optionen: helles Grau, kursiv */
+.form-control option {
+  color: #bbb;
+  font-style: italic;
+  background-color: #5a6268;
+}
+
+/* Deaktivierte Optionen (Gruppenüberschriften wie "Mission", "Job"):
+   weiß, !important übersteuert Browser-Standardstil */
+.ds-option-dis {
+  color: #fff !important;
+}
+
+/* Fokus-Zustand: dunklerer Rahmen + blauer Glow-Ring */
+.form-control:focus {
+  border-color: #555;
+  background: transparent;
+  box-shadow: 0 0 0 .3rem rgba(0, 123, 255, .25);
+  color: #bbb;
+}
+
+/* Radio-Button für Anrede:
+   Ungültig (noch nicht gewählt): CSS-Eigenschaft deaktiviert (_content) */
+.form-check-input[name="anrede"]:invalid + .form-check-label::after {
+  _content: " \2717";   /* ✗ deaktiviert */
+  color: #37a;
+  margin-left: 8px;
+}
+
+/* Gültig (eine Option gewählt, aber nicht gecheckt): kein Zusatz-Icon */
+.form-check-input[name="anrede"]:valid + .form-check-label::after {
+  content: "";
+}
+
+/* Gewählt (gecheckt): grünes Häkchen ✓ hinter dem Label */
+.form-check-input[name="anrede"]:checked + .form-check-label::after {
+  content: " \2713";    /* ✓ */
+  color: #2e7d5e;
+  margin-left: 8px;
+}
+
+/* Wrapper für Felder mit Validierungs-Icon rechts */
+.input-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Feld nicht leer + ungültig: blauer Rahmen (noch tippend) */
+.form-control:not(:placeholder-shown):invalid {
+  border-color: #37a;
+}
+
+/* Rechten Innenabstand für alle Felder reservieren (Icon-Platz) */
+.form-control {
+  padding-right: 30px !important;
+}
+
+/* Pflichtfeld gültig: grüner Rahmen */
+.form-control:required:valid {
+  border-color: #2e7d5e;
+}
+
+/* Pflichtfeld ungültig: blauer Rahmen */
+.form-control:required:invalid {
+  border-color: #37a;
+}
+
+/* Radio-Gruppe: vertikal gestapelt mit kleinem Abstand */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-top: 0.45rem;
+}
+
+/* Einzelne Radio-Zeile: Icon und Label nebeneinander */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* Radio-Button: einheitliche Größe, dunkle Akzentfarbe, kein Außenabstand */
+.form-check-input {
+  width: 15px;
+  height: 15px;
+  accent-color: #1a1a1a;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Radio-Label: weiß, Klick-Cursor, etwas eingerückt */
+.form-check-label {
+  color: #fff;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+/* Pflichtfeld-Hinweis-Text unterhalb des Formulars:
+   Standard: grau, transparent (dezent) */
+.form-hint {
+  color: #999;
+  margin-top: 1.6rem;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+/* Fehlerzustand (Klasse "has-error" per JS gesetzt):
+   Hinweis wird gelb-orange mit linkem Akzentstreifen hervorgehoben */
+.has-error #pflichtfeld-hinweis {
+  color: #d39e00;
+  background-color: rgba(192, 57, 43, 0.05);  /* Sehr dezentes Rot */
+  border-left: 2px solid #d39e00;
+}
+
+/* Button-Zeile: rechtsbündig */
+.form-submit {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Absenden-Button: Blau, eckig (border-radius: 0) */
+.btn-submit {
+  background-color: #336699;
+  padding: 14px 30px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.15s;
+  margin-bottom: 60px;
+}
+
+/* Hover für beide Buttons: helleres Blau */
+.btn-submit:hover, .btn-reset:hover {
+  background: #348ABF;
+}
+
+/* Zurücksetzen-Button: dunkleres Blau */
+.btn-reset {
+  background-color: #22476c;
+  padding: 14px 30px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.15s;
+  margin-bottom: 60px;
+}
+
+/* Formular-Responsive: unter 540px Label über Feld (einspaltig) */
+@media (max-width: 540px) {
+  .form-group {
+    grid-template-columns: 1fr;    /* Ein-spaltig statt Label|Feld */
+    gap: 0.3rem 0;
+    padding: 0.85rem 0;
+  }
+  .form-group > label {
+    padding-top: 0;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+   Absolut am unteren Rand der Kontakt-Sektion positioniert
+═══════════════════════════════════════════════════════════════ */
+.ds-footer {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+}
+
+/* Footer-Links: weiß */
+.ds-footer a {
+  color: #fff;
+}
+
+/* Footer-Links beim Hover: helles Cyan */
+.ds-footer a:hover {
+  color: #9CF;
+}
+
+/* Globaler Zeilenabstand für Fließtext-Absätze */
+p {
+  line-height: 1.9;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════════════════════════════ */
+
+/* Ab 768px (Tablet aufwärts): Intro-Texte ohne linken Einzug;
+   Nav-Links mit mehr horizontalem Abstand */
+@media (min-width: 768px) {
+  .ds-intro-text-container {
+    padding-left: 0;
+  }
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+/* Ab 1200px (Desktop): Container breiter als Bootstrap-Standard */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1275px;          /* Etwas breiter als Bootstrap (1140px) */
+  }
+  .ds-container-gallery {
+    max-width: 1290px;          /* Galerie-Slider: noch etwas breiter */
+  }
+  .ds-container-contact {
+    max-width: 1063px;          /* Kontaktbereich: schmaler für bessere Lesbarkeit */
+  }
+}
+
+/* Bis 991px (Tablet): Intro-Texte zentriert mit Maximalbreite */
+@media (max-width: 991px) {
+  .ds-intro-text-container {
+    padding-left: 15px;
+    padding-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;   /* Zentriert auf kleinen Bildschirmen */
+  }
+}
+
+/* Bis 1220px: Navbar-Menü schmaler und rechtsbündig;
+   aufgeklapptes Menü auf weißem Hintergrund */
+@media (max-width: 1220px) {
+  .navbar-nav {
+    max-width: 200px;
+    text-align: right;
+  }
+  .navbar-collapse {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 3px;
+  }
+  .navbar-collapse .nav-link {
+    color: #707070;       /* Grau auf weißem Hintergrund lesbar */
+    padding-right: 20px;
+  }
+}
+
+/* Bis 480px (Smartphone): Galerie auf ein Bild beschränkt;
+   Dots enger; Gallery-Container schmal */
+@media (max-width: 480px) {
+  .ds-gallery-container {
+    max-width: 220px;     /* Genau ein Galerie-Bild breit */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ds-gallery-container-2 {
+    max-width: 350px;     /* Team-Karussell: etwas breiter */
+  }
+  .slick-dots li {
+    margin: 0 8px;        /* Dots enger auf kleinen Bildschirmen */
+  }
+  .ds-gallery-item {
+    margin: 0;            /* Kein seitlicher Abstand bei Einzelbild-Ansicht */
+  }
+}

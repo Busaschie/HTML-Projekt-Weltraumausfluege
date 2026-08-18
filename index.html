@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+      <!-- ═══════════════════════════════════════════════════
+           ZEICHENSATZ & VIEWPORT
+           UTF-8 für Umlaute; viewport für mobile Darstellung
+      ═══════════════════════════════════════════════════ -->
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+      <!-- Seitentitel (erscheint im Browser-Tab) -->
+      <title>LittleSpaceMan - Off into the space - Deine Reise ins All</title>
+
+      <!-- ═══════════════════════════════════════════════════
+           SEO-META-TAGS
+           Beschreibung, Autor, Keywords und weitere Hinweise
+           für Suchmaschinen-Crawler
+      ═══════════════════════════════════════════════════ -->
+      <meta name="description" content="Weltraumfl&uuml;ge f&uuml;r Pioniere: Erlebe Schwerelosigkeit und orbitale Missionen mit modernster Technik. Buche jetzt dein Ticket zu den Sternen und werde Teil der n&auml;chsten &auml;ra der Raumfahrt.">
+      <meta name="author" content="LittleSpaceMan">
+      <meta name="keywords" content="Weltraumflug, Weltraumtourismus, Schwerelosigkeit erleben, Astronautentraining, Raketenstart, orbitale Mission, Ticket ins All, Raumfahrt, Space Travel, Zero G">
+      <meta name="page-topic" content="Dienstleistung"/>
+      <meta name="language" content="Deutsch"/>
+      <meta name="robots" content="index, follow"/>
+      <meta name="copyright" content="2026 LittleSpceMan, M&uuml;nchen"/>
+      <meta name="revisit-after" content="3 days"/>
+
+      <!-- ═══════════════════════════════════════════════════
+           STYLESHEETS
+           Reihenfolge: Drittanbieter zuerst, eigene CSS zuletzt
+           - slick.css / slick-theme.css  → Slider-Bibliothek
+           - magnific-popup.css           → Lightbox-Bibliothek
+           - boot.css                     → Bootstrap (angepasst)
+           - default.css                  → Eigene Projektstyles
+      ═══════════════════════════════════════════════════ -->
+      <link rel="stylesheet" href="css/slick.css">
+      <link rel="stylesheet" href="css/slick-theme.css">
+      <link rel="stylesheet" href="css/magnific-popup.css">
+      <link rel="stylesheet" href="css/boot.css" />
+      <link rel="stylesheet" href="css/default.css" />
+
+      <!-- Favicon (Browser-Tab-Symbol) -->
+      <link rel="shortcut icon" href="images/favicon.ico"/>
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: HERO (#home)
+         Vollbild-Einstiegsbereich mit Parallax-Hintergrundbild,
+         Navigationsleiste, Titel-Text und Scroll-Pfeil nach unten
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="home" class="text-white ds-font-big ds-parallax">
+
+      <!-- ─────────────────────────────────────────────────
+           NAVIGATION
+           Fixierte Navbar (Bootstrap); scrollt mit und wird
+           bei >120px Scroll-Tiefe per JS mit Klasse "scroll"
+           auf weißen Hintergrund umgeschaltet
+      ───────────────────────────────────────────────── -->
+      <nav class="navbar navbar-expand-md ds-navbar" id="tmNav">
+        <div class="container">
+
+          <!-- Logo / Markenname mit Spaceman-Bild -->
+          <div class="ds-brand">
+              <a href="#home" class="navbar-brand">
+                  LittleSpaceMan</a><img src="images/spaceman.webp" alt="LittleSpaceMan" title="LittleSpaceMan" width="10%">
+          </div>
+
+          <!-- Hamburger-Button für mobile Ansicht (Bootstrap collapse) -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+
+          <!-- Navigationslinks – rechtsbündig (ml-auto) -->
+          <!-- Jeder Link ist ein Anker zur entsprechenden Sektion -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link ds-nav-link" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link ds-nav-link" href="#missionen">Missionen</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link ds-nav-link" href="#kooperation">Kooperation</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link ds-nav-link" href="#news">News & Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ds-nav-link" href="#gallery">Views</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ds-nav-link" href="#jobs">Jobs</a>
+                </li>
+              <li class="nav-item">
+                  <a class="nav-link ds-nav-link" href="#contact">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+      <!-- Zentrierter Hero-Text (Firmenname + Slogan) -->
+      <div class="text-center ds-hero-text-container">
+        <div class="ds-hero-text-container-inner">
+            <h2 class="ds-hero-title">LittleSpaceMan</h2>
+            <p class="ds-hero-subtitle">
+              Off into the space
+              <br>Deine Reise ins All
+            </p>
+        </div>
+      </div>
+
+      <!-- Scroll-Pfeil nach unten → führt zur Team-Sektion -->
+      <div class="ds-next ds-intro-next">
+        <a href="#team" class="text-center ds-down-arrow-link">
+          <i class="fas fa-2x fa-arrow-down ds-down-arrow"></i>
+        </a>
+      </div>
+
+    </section>
+    <!-- ENDE: HERO -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: TEAM (#team)
+         Zeigt Teammitglieder als Slick-Karussell mit Bild,
+         Zitat (blockquote) und Name (figcaption)
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="team" class="ds-section-pad-top">
+      <div class="container ds-content">
+        <div class="row">
+          <div class="col-lg-12 ds-content-box">
+
+            <!-- Sektionsüberschrift -->
+            <h2 class="text-center ds-text-primary mb-4 ds-section-title">Team</h2>
+
+            <!-- Einleitungstext -->
+            <p class="mx-auto ds-section-desc text-center">
+                Unser Team vereint Pioniergeist mit technischer Exzellenz, um die Grenzen der Erdatmosph&auml;re zu
+                sprengen. Von Ingenieuren bis zu Strategen – wir begleiten Sie sicher ins All. Heben wir gemeinsam ab und gestalten die Zukunft der Raumfahrt!
+              </p>
+
+            <!-- Slick-Karussell-Container für Teammitglieder -->
+            <!-- Initialisierung erfolgt per jQuery in den Scripts am Seitenende -->
+            <div class="mx-auto ds-gallery-container ds-gallery-container-2">
+              <div class="carousel">
+
+                <!-- Teammitglied: CEO -->
+                <figure class="ds-item">
+                  <img src="images/ceo.webp" alt="Rocket Man (CEO)" class="img-fluid mx-auto">
+                  <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aut distinctio earum.</blockquote>
+                  <figcaption>Rocket Man (CEO)</figcaption>
+                </figure>
+
+                <!-- Teammitglied: Marketing -->
+                <figure class="ds-item">
+                  <img src="images/marketing.webp" alt="Sandar Space (Marketing)" class="img-fluid mx-auto">
+                  <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aut distinctio earum.</blockquote>
+                  <figcaption>Sandar Space (Marketing)</figcaption>
+                </figure>
+
+                <!-- Teammitglied: Technik -->
+                <figure class="ds-item">
+                  <img src="images/technik.webp" alt="Dual Rocker (Technik)" class="img-fluid mx-auto">
+                  <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aut distinctio earum.</blockquote>
+                  <figcaption>Dual Rocker (Technik)</figcaption>
+                </figure>
+
+                <!-- Teammitglied: Pilot -->
+                <figure class="ds-item">
+                  <img src="images/pilot.webp" alt="Hans Bruchlandung (Pilot)" class="img-fluid mx-auto">
+                  <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aut distinctio earum.</blockquote>
+                  <figcaption>Hans Bruchlandung (Pilot)</figcaption>
+                </figure>
+
+                <!-- Teammitglied: Sozial -->
+                <figure class="ds-item">
+                  <img src="images/sozial.webp" alt="Claudia Joker (Sozial)" class="img-fluid mx-auto">
+                  <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aut distinctio earum.</blockquote>
+                  <figcaption>Claudia Joker (Sozial)</figcaption>
+                </figure>
+
+              </div><!-- Ende .carousel -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- ENDE: TEAM -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: MISSIONEN (#missionen)
+         Parallax-Hintergrund; stellt die drei Hauptmissionen vor:
+         Forschung & Entdeckung, Abenteuer & Tourismus, Pionier-Mission
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="missionen" class="ds-section-pad-top ds-parallax-2">
+
+        <div class="container">
+
+            <!-- Zeile 1: Sektionsüberschrift und Einleitungstext -->
+            <div class="row ds-content-box">
+                <div class="col-lg-12 col-xl-12">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4 ds-section-title">Missionen</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Bereit f&uuml;r das n&auml;chste Kapitel der Menschheit? Wir &ouml;ffnen das Tor zum Kosmos! Von exklusiven Erdorbits bis hin zu ersten Forschungstrips Richtung Mond – unsere aktuellen Missionen machen den Weltraum f&uuml;r Sie erreichbar. Steigen Sie ein und werden Sie Teil der Geschichte</p>
+                    </div>
+                </div>
+            </div><!-- Ende Zeile 1 -->
+
+            <!-- Zeile 2: Mission "Forschung & Entdeckung" und "Abenteuer & Tourismus" -->
+            <div class="row ds-content-box">
+
+                <!-- Icon-Spalte: Atom-Symbol -->
+                <div class="col-lg-1">
+                    <i class="far fa-solid fa-atom text-center ds-icon"></i>
+                </div>
+                <!-- Inhalt: Forschung & Entdeckung -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4">Forschung & Entdeckung</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Bereit f&uuml;r das Unbekannte? Wir verlassen die Erdumlaufbahn, um wissenschaftliche Durchbr&uuml;che im All zu erzielen. Begleiten Sie unsere Forschungsmission zu neuen Horizonten. Die Zukunft beginnt hier.</p>
+                        <div class="ds-continue">
+                            <a href="#contact" class="ds-intro-text ds-btn-primary">Jetzt informieren</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon-Spalte: Erdkugel-Symbol -->
+                <div class="col-lg-1">
+                    <i class="far fa-solid fa-earth-europe text-center ds-icon"></i>
+                </div>
+                <!-- Inhalt: Abenteuer & Tourismus -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4">Abenteuer & Tourismus</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Einmal die Erde von oben sehen? Wir machen den Traum vom Weltraumtourismus wahr. Erleben Sie Schwerelosigkeit und den Adrenalinkick Ihres Lebens auf unserer exklusiven Reise zu den Sternen.</p>
+                        <div class="ds-continue">
+                            <a href="#contact" class="ds-intro-text ds-btn-primary">Jetzt informieren</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- Ende Zeile 2 -->
+
+            <!-- Zeile 3: Mission "Die Pionier-Mission" (rechtsbündig in Spalten 7–12) -->
+            <div class="row ds-content-box">
+
+                <!-- Leere Platzhalterspalt links (für rechtsbündige Ausrichtung) -->
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container"></div>
+                </div>
+
+                <!-- Icon-Spalte: Hippo-Symbol (Platzhalter/humorvoll) -->
+                <div class="col-lg-1">
+                    <i class="fas fa-solid fa-hippo fa-bounce text-center ds-icon"></i>
+                </div>
+                <!-- Inhalt: Die Pionier-Mission -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                      <h2 class="ds-text-primary mb-4">Die Pionier-Mission</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Grenzen sprengen, Wissen vertiefen: Wir vereinen mutigen Entdeckergeist mit modernster Technik. Erlebe die Faszination des Weltraums und trage aktiv dazu bei, die Geheimnisse des Kosmos zu l&uuml;ften</p>
+                          <div class="ds-continue">
+                            <a href="#contact" class="ds-intro-text ds-btn-primary">Jetzt informieren</a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Ende Zeile 3 -->
+        </div>
+    </section>
+    <!-- ENDE: MISSIONEN -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: KOOPERATION (#kooperation)
+         Stellt vier Kooperationspartner vor:
+         Chauffeur Service, Catering, Raketentriebwerke, Raketentreibstoff
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="kooperation" class="ds-section-pad-top">
+
+        <div class="container">
+
+            <!-- Zeile 1: Sektionsüberschrift und Einleitungstext -->
+            <div class="row ds-content-box">
+                <div class="col-lg-12 col-xl-12">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4 ds-section-title">Kooperation</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Bereit f&uuml;r das n&auml;chste Kapitel der Raumfahrt? Gemeinsam mit unseren vision&auml;ren Partnern definieren wir die Grenzen des M&ouml;glichen neu. Erfahren Sie hier, wie wir durch geb&uuml;ndelte Expertise und modernste Technologie die Zukunft der Weltraumfl&uuml;ge sicher und effizient gestalten.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zeile 2: Partner "Chauffeur Service" (Luxora) und "Catering" (Soul of Food) -->
+            <div class="row ds-content-box">
+
+                <!-- Icon: Personen-Symbol -->
+                <div class="col-lg-1">
+                    <i class="fas fa-solid fa-users text-center ds-icon"></i>
+                </div>
+                <!-- Partner: Chauffeur Service – Luxora VIP -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4">Chauffeur Service</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Die Mercedes S-Klasse steht f&uuml;r ultimativen Luxus, innovative Technik und h&ouml;chsten
+                            Fahrkomfort, lassen Sie sich verw&ouml;hnen und geniessen sie den Luxus.<br>
+                            <!-- Externer Link zum Kooperationspartner (öffnet in neuem Tab) -->
+                            <a href="https://luxoravip.de/first-class/" target="_blank" title="Luxora"><img
+                                    src="images/logo-luxora.webp" width="25%" alt="Chauffeur Service" title="Luxora">  <strong>Luxora
+                                First class</strong></a></p>
+                    </div>
+                </div>
+
+                <!-- Icon: Schüssel-Symbol -->
+                <div class="col-lg-1">
+                    <i class="far fa-solid fa-bowl-food text-center ds-icon"></i>
+                </div>
+                <!-- Partner: Catering – Soul of Food -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4">Catering</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Vom produktiven Business-Lunch bis zur exklusiven Firmenfeier. Wir machen Ihren Erfolg
+                            schmackhaft. So wird der Flug aus ein kulinarischer H&ouml;hepunkt.<br>
+                            <!-- Externer Link zum Kooperationspartner (öffnet in neuem Tab) -->
+                            <a href="https://soul-of-food-catering.de/firmencatering/" title="Soul of Food"
+                               target="_blank"><img src="images/logo-soul-of-food.webp" alt="Catering" width="14%">  <strong>Soul
+                                of Food</strong></a>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Zeile 3: Partner "Raketentriebwerke" (ESA) und "Raketentreibstoff" (GDCh) -->
+            <div class="row ds-content-box">
+
+                <!-- Icon: Raketen-Symbol (mit Schüttel-Animation) -->
+                <div class="col-lg-1">
+                    <i class="fas fa-solid fa-rocket fa-shake text-center ds-icon"></i>
+                </div>
+                <!-- Partner: Raketentriebwerke – ESA / EADS Astrium -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4">Raktentriebwerke</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Bei EADS Astrium in Ottobrunn entwickelte und gefertigte Raketentriebwerke und Schubkammern sind ein wichtiger Garant f&uuml;r die Zuverl&auml;ssigkei<br>
+                            <!-- Externer Link zur ESA (öffnet in neuem Tab) -->
+                            <a
+                                    href="https://www.esa.int/Space_in_Member_States/Germany/Der_Schub_kommt_aus_Deutschland" target="_blank" title="The European Space Agency - esa"><img src="images/logo-esa.webp" alt="Raktentriebwerke" width="15%" title="The European Space Agency - esa">  <strong>The European Space Agency</strong></a></p>
+                    </div>
+                </div>
+
+                <!-- Icon: Feuer-Symbol -->
+                <div class="col-lg-1">
+                    <i class="far fa-solid fa-fire text-center ds-icon"></i>
+                </div>
+                <!-- Partner: Raketentreibstoff – Gesellschaft Deutscher Chemiker -->
+                <div class="col-lg-5">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4">Raketentreibstoff</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Hervorgegangen aus milit&auml;rischen Entwicklungen sind Komposittreibstoffe die am h&auml;ufigsten
+                            eingesetzten festen Raketentreibstoffe. <br>
+                            <!-- Externer Link zur GDCh (öffnet in neuem Tab) -->
+                            <a
+                                href="https://gdch.app/article/feste-treibstoffe-fuer-raketen-4135674" title="Gesellschaft Deutscher Chemiker" target="_blank"><img src="images/logo-gdch.webp" width="10%" alt="Raketentreibstoff" title="GDCh Logo">  <strong>Gesellschaft Deutscher Chemiker</strong></a></p>
+                    </div>
+                </div>
+            </div><!-- Ende Zeile 3 -->
+        </div>
+    </section>
+    <!-- ENDE: KOOPERATION -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: NEWS & EVENTS (#news)
+         Parallax-Hintergrund; zeigt aktuelle Neuigkeiten und
+         bevorstehende Events in einem 3-spaltigen Karten-Layout
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="news" class="ds-section-pad-top ds-parallax-2">
+
+        <div class="container">
+
+            <!-- Zeile 1: Sektionsüberschrift und Einleitungstext -->
+            <div class="row ds-content-box">
+                <div class="col-lg-12 col-xl-12">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4 ds-section-title">News & Events</h2>
+                        <p class="mb-4 ds-intro-text">
+                            <strong>Verpasse keine Highlights mehr:</strong> Von exklusiven Einblicken hinter die Kulissen unserer Weltraummissionen bis zu spannenden Live-Events. Hier erf&auml;hrst du alles &uuml;ber unsere n&auml;chsten Starts, technologische Meilensteine und Termine, die Geschichte schreiben.</p>
+                    </div>
+                </div>
+            </div><!-- Ende Zeile 1 -->
+
+            <!-- Zeile 2: News- und Event-Karten (3 Spalten) -->
+            <div class="row ds-content-box">
+
+                <!-- Spalte 1 (schmal): News-Karte – Andocken an Orbitalstation -->
+                <div class="col-lg-3">
+                    <div class="ds-intro-text-container news-border news-news" style="margin-bottom: 30px">
+                        <h4 class="ds-text-primary mb-4">News</h4>
+                        <p><i>Datum:</i> 04.04.2026</p>
+                        <!-- Bild schwebt rechts (news-round-right = float right mit shape-outside) -->
+                        <p class="mb-4 ds-intro-text">
+                            Ein historischer Moment: Am 04.04.2026 dockte unsere<img src="images/umrundung.webp"
+                                                                                     width="30%" alt="Erfolgreich an der
+                            neuen Orbitalstation angedockt" class="news-round-right">"Explorer I" erfolgreich an der
+                            neuen Orbitalstation an. Dies markiert den Beginn einer neuen &auml;ra f&uuml;r den Weltraumtourismus. In den kommenden Wochen werden die ersten zivilen G&auml;ste die Aussicht auf unsere Erde genie&szlig;en k&ouml;nnen.</p>
+                    </div>
+                </div>
+
+                <!-- Spalte 2 (mittel): zwei Karten übereinander -->
+                <div class="col-lg-5">
+
+                    <!-- News-Karte: Neues Triebwerk -->
+                    <div class="ds-intro-text-container news-border news-news" style="margin-bottom: 30px">
+                        <h4 class="ds-text-primary mb-4">News</h4>
+                        <p><i>Datum:</i> 18.02.2026</p>
+                        <!-- Bild schwebt links (news-round-left = float left mit shape-outside) -->
+                        <p class="mb-4 ds-intro-text"><img src="images/triebwerk.webp" width="30%" alt="Technischer Meilenstein"
+                                                           class="news-round-left">Technischer Meilenstein: Unsere
+                            neue Triebwerksgeneration reduziert den Treibstoffverbrauch um 20%. Effizienter zu den Sternen!</p>
+                    </div>
+
+                    <!-- Event-Karte: Astronauten-Training -->
+                    <div class="ds-intro-text-container jobs-border news-events" style="margin-bottom: 30px">
+                        <h4 class="ds-text-primary mb-4">Astronauten-Training</h4>
+                        <p><i>Datum:</i> 15.05.2026</p>
+                        <p class="mb-4 ds-intro-text"><img src="images/training.webp" width="30%"
+                         alt="Astronauten-Training"  class="news-round-left">Astronauten-Training f&uuml;r einen
+                            Tag! Teste am 15. Mai deine Belastbarkeit in der Zentrifuge und lerne alles &uuml;ber das Leben im All. Sichere dir jetzt dein Ticket f&uuml;r dieses Abenteuer und entdecke den Pionier in dir!</p>
+                    </div>
+
+                </div>
+
+                <!-- Spalte 3 (breit): zwei Karten übereinander -->
+                <div class="col-lg-4">
+
+                    <!-- Event-Karte: Live-Viewing -->
+                    <div class="ds-intro-text-container news-border news-events" style="margin-bottom: 30px">
+                        <h4 class="ds-text-primary mb-4">Live-Viewing</h4>
+                        <p><i>Datum:</i> 20.10.2026</p>
+                        <p class="mb-4 ds-intro-text"><img src="images/viewing.webp" width="30%" alt="Live-Viewing"
+                                                           class="news-round-right">Live-Viewing: Erlebe den n&auml;chsten
+                            Raketenstart hautnah in unserem Kontrollzentrum. Inklusive Experten-Talk und VR-Flugsimulation.</p>
+                    </div>
+
+                    <!-- News-Karte: Projekt Orion / Mond-Umrundung -->
+                    <div class="ds-intro-text-container news-border news-news" style="margin-bottom: 30px">
+                        <h4 class="ds-text-primary mb-4">News</h4>
+                        <p><i>Datum:</i> 16.08.2027</p>
+                        <p class="mb-4 ds-intro-text">Startschuss f&uuml;r Projekt Orion! <img src="images/dock.webp" width="30%" alt="Startschuss f&uuml;r Projekt Orion" class="news-round-left">Ab sofort sind Buchungen f&uuml;r unsere Mond-Umrundung 2027 m&ouml;glich. Sichere dir jetzt deinen Platz im Orbit.</p>
+                    </div>
+
+                </div>
+            </div><!-- Ende Zeile 2 -->
+        </div>
+    </section>
+    <!-- ENDE: NEWS & EVENTS -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: GALERIE / VIEWS (#gallery)
+         Zeigt 8 Bildkacheln als Slick-Slider mit Lightbox-Funktion
+         (Magnific Popup); Hover-Effekt "effect-honey" per CSS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="gallery" class="ds-section-pad-top">
+      <div class="container ds-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <!-- Sektionsüberschrift -->
+              <h2 class="ds-text-primary ds-section-title mb-4">Views</h2>
+              <p class="mx-auto ds-section-desc">
+                  Ein Bild sagt mehr als tausend Lichtjahre: Tauchen Sie ein in unsere Galerie und erleben Sie die Magie unserer Missionen. Von majest&auml;tischen Starts bis hin zur Stille des Orbits – sehen Sie selbst.
+              </p>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Slick-Galerie-Container; ds-gallery wird per JS initialisiert -->
+                <!-- Magnific Popup öffnet das Vollbild (view-gr-*.webp) beim Klick -->
+                <div class="mx-auto ds-gallery-container">
+                    <div class="grid ds-gallery">
+
+                      <!-- Galerie-Bild 1: Der Start -->
+                      <a href="images/view-gr-01.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-01.webp" alt="Der Start" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Der Start! <span>Wunderbar!</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 2: Im Orbit -->
+                      <a href="images/view-gr-02.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-02.webp" alt="Im Orbit" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Im Orbit <span>Aussicht</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 3: Überschall -->
+                      <a href="images/view-gr-03.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-03.webp" alt="&uuml;berschall" class="img-fluid">
+                          <figcaption>
+                            <h2><i><span>&uuml;berschall </span>Auf geht es</i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 4: Los geht es -->
+                      <a href="images/view-gr-04.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-04.webp" alt="Los geht es" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Los geht es <span>Sehnsucht</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 5: Im Inneren -->
+                      <a href="images/view-gr-05.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-05.webp" alt="Im Inneren" class="img-fluid">
+                          <figcaption>
+                            <h2><i><span>Im Inneren</span> Luxus</i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 6: Die Reisenden -->
+                      <a href="images/view-gr-06.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-06.webp" alt="Die Reisenden" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Die Reisenden <span>Errinnerung</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 7: Willkommen -->
+                      <a href="images/view-gr-07.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-07.webp" alt="Willkommen" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Willkommen <span>Daheim</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                      <!-- Galerie-Bild 8: Unsere Kapsel -->
+                      <a href="images/view-gr-08.webp">
+                        <figure class="effect-honey ds-gallery-item">
+                          <img src="images/view-kl-08.webp" alt="Unsere Kapsel" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Unsere Kapsel <span>Aussichten</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+
+                    </div><!-- Ende .grid.ds-gallery -->
+                </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- ENDE: GALERIE -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: JOBS (#jobs)
+         Parallax-Hintergrund; listet drei offene Stellen auf:
+         Chauffeur, Marketing, Pilot – je mit Beschreibung und Benefits
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="jobs" class="ds-section-pad-top">
+
+        <div class="container">
+
+            <!-- Zeile 1: Sektionsüberschrift und Einleitungstext -->
+            <div class="row ds-content-box">
+                <div class="col-lg-12 col-xl-12">
+                    <div class="ds-intro-text-container">
+                        <h2 class="ds-text-primary mb-4 ds-section-title">Jobs</h2>
+                        <p class="mb-4 ds-intro-text">
+                            Bereit f&uuml;r das n&auml;chste Kapitel der Raumfahrt? Gemeinsam mit unseren vision&auml;ren Partnern definieren wir die Grenzen des M&ouml;glichen neu. Erfahren Sie hier, wie wir durch geb&uuml;ndelte Expertise und modernste Technologie die Zukunft der Weltraumfl&uuml;ge sicher und effizient gestalten.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job-Karte 1: Chauffeur -->
+            <div class="row ds-content-box">
+                <div class="col-lg-1">
+                    <i class="fas fa-solid fa-users text-center ds-icon"></i>
+                </div>
+                <!-- Stellenbeschreibung -->
+                <div class="col-lg-8">
+                    <div class="ds-intro-text-container jobs-border">
+                        <h2 class="ds-text-primary mb-4">Chauffeur <span class="jobs-gender">(m/w/d)</span></h2>
+                        <p class="mb-4 ds-intro-text">
+                            Bringe unsere VIP-G&auml;ste sicher ans Ziel! Wir suchen einen Chauffeur mit Stil, Diskretion und erstklassigen Fahrkenntnissen.</p>
+                        <!-- CTA-Button → Kontaktformular -->
+                        <div class="ds-continue">
+                            <a href="index.html#contact" class="ds-intro-text ds-btn-primary">Jetzt
+                                bewerben</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Benefits-Box -->
+                <div class="col-lg-3">
+                    <div class="ds-intro-text-container jobs-border">
+                        <h3 class="ds-text-primary mb-4">Benefits</h3>
+                        <div class="mb-4 ds-intro-text">
+                            <p class="jobs-benefits">Berufseinsteiger</p>
+                            <p class="jobs-benefits">50 Tage Urlaub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job-Karte 2: Marketing -->
+            <div class="row ds-content-box">
+                <div class="col-lg-1">
+                    <i class="fas fa-solid fa-users text-center ds-icon"></i>
+                </div>
+                <!-- Stellenbeschreibung -->
+                <div class="col-lg-8">
+                    <div class="ds-intro-text-container jobs-border">
+                        <h2 class="ds-text-primary mb-4">Marketing <span class="jobs-gender">(m/w/d)</span></h2>
+                        <p class="mb-4 ds-intro-text">
+                            Kreative K&ouml;pfe gesucht: Gestalte unsere Marke, plane Kampagnen und begeistere Kunden auf allen Kan&auml;len. Werde Teil unseres Marketing-Teams!
+                        </p>
+                        <!-- CTA-Button → Kontaktformular -->
+                        <div class="ds-continue">
+                            <a href="#contact" class="ds-intro-text ds-btn-primary">Jetzt bewerben</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Benefits-Box -->
+                <div class="col-lg-3">
+                    <div class="ds-intro-text-container jobs-border">
+                        <h3 class="ds-text-primary mb-4">Benefits</h3>
+                        <div class="mb-4 ds-intro-text">
+                            <p class="jobs-benefits">Home-Office</p>
+                            <p class="jobs-benefits">40 Tage Urlaub</p>
+                            <p class="jobs-benefits">Vollzeit</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Ende Job-Karte 2 -->
+
+            <!-- Job-Karte 3: Pilot -->
+            <div class="row ds-content-box">
+                <!-- Icon: Rakete mit Bounce-Animation -->
+                <div class="col-lg-1">
+                    <i class="fas fa-solid fa-rocket fa-bounce text-center ds-icon"></i>
+                </div>
+                <!-- Stellenbeschreibung -->
+                <div class="col-lg-8">
+                    <div class="ds-intro-text-container jobs-border">
+                        <h2 class="ds-text-primary mb-4">Pilot <span class="jobs-gender">(m/w/d)</span></h2>
+                        <p class="mb-4 ds-intro-text">
+                            Erobere das Cockpit! Wir suchen einen erfahrenen Piloten mit Pr&auml;zision und Souver&auml;nit&auml;t. Steuere unsere Flotte sicher durch alle Zeitzonen.
+                        </p>
+                        <!-- CTA-Button → Kontaktformular -->
+                        <div class="ds-continue">
+                            <a href="#contact" class="ds-intro-text ds-btn-primary">Jetzt bewerben</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Benefits-Box -->
+                <div class="col-lg-3">
+                    <div class="ds-intro-text-container jobs-border">
+                        <h3 class="ds-text-primary mb-4">Benefits</h3>
+                        <div class="mb-4 ds-intro-text">
+                            <p class="jobs-benefits">Flex Zeiten</p>
+                            <p class="jobs-benefits">40 Tage Urlaub</p>
+                            <p class="jobs-benefits">50h Woche</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Ende Job-Karte 3 -->
+
+        </div>
+        <!-- Hintergrund-Overlay deaktiviert (auskommentiert) -->
+        <!--div class="ds-bg-overlay"></div-->
+    </section>
+    <!-- ENDE: JOBS -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEKTION: KONTAKT (#contact)
+         Dunkler Hintergrund; enthält Kontaktformular (links)
+         und Kontaktdaten (rechts); Footer am unteren Rand
+         Das Formular wird per formular.js validiert und versendet
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="contact" class="ds-section-pad-top ds-parallax-2">
+
+      <div class="container ds-container-contact">
+
+        <div class="row">
+
+            <!-- Sektionsüberschrift (volle Breite, zentriert) -->
+            <div class="text-center col-12">
+                <h2 class="ds-section-title mb-4">Kontakt</h2>
+                <p class="mb-5">
+                    Haben Sie Fragen zu einen Job oder sind Sie bereit f&uuml;r den Abflug? Unser Team ist f&uuml;r Sie da.
+                    Kontaktieren Sie uns f&uuml;r individuelle Beratung zu Ihrer Reise zu den Sternen. Wir freuen uns auf Ihre Nachricht!
+                </p><br>
+            </div>
+
+            <!-- Kontaktformular (8/12 Spalten) -->
+            <!-- novalidate: Browser-native Validierung deaktiviert; stattdessen formular.js -->
+            <div class="col-sm-12 col-md-8">
+                <form novalidate>
+
+                    <!-- Formularfeld: Anrede (Radio-Buttons) -->
+                    <div class="form-group">
+                        <label>Anrede *</label>
+                        <div class="radio-group">
+                            <div class="form-check">
+                                <input class="form-check-input" tabindex="10" type="radio" name="anrede" id="anrede_frau" value="frau" required>
+                                <label class="form-check-label" for="anrede_frau">Frau</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" tabindex="20" type="radio" name="anrede" id="anrede_mann" value="mann" required>
+                                <label class="form-check-label" for="anrede_mann">Mann</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formularfeld: Betreff (Dropdown) -->
+                    <!-- Kategorien "Mission" und "Job" sind als Gruppenüberschriften deaktiviert -->
+                    <div class="form-group">
+                        <label for="text_betreff">Betreff *</label>
+                        <div class="input-container">
+                            <select name="text_betreff" id="text_betreff" tabindex="30" class="form-control" required>
+                                <option value=""></option>
+                                <!-- Deaktivierte Gruppenüberschrift -->
+                                <option value="Mission" class="ds-option-dis" disabled>Mission</option>
+                                <option value="Mission - Forschung-Entdeckung">Forschung & Entdeckung</option>
+                                <option value="Mission - Abenteuer-Tourismus">Abenteuer & Tourismus</option>
+                                <option value="Mission - Die-Pionier-Mission">Die Pionier-Mission</option>
+                                <!-- Deaktivierte Gruppenüberschrift -->
+                                <option value="Job" class="ds-option-dis" disabled>Job</option>
+                                <option value="Job - Chauffeur">Chauffeur</option>
+                                <option value="Job - ChauffeurMarketing">Marketing</option>
+                                <option value="Job - ChauffeurPilot">Pilot</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Formularfeld: Nachname -->
+                    <div class="form-group">
+                        <label for="text_nachname">Nachname *</label>
+                        <div class="input-container">
+                            <input type="text" class="form-control" id="text_nachname" tabindex="40" name="text_nachname" required>
+                        </div>
+                    </div>
+
+                    <!-- Formularfeld: Vorname -->
+                    <div class="form-group">
+                        <label for="text_name">Vorname *</label>
+                        <div>
+                            <input type="text" class="form-control" id="text_name" tabindex="50" name="text_name" required>
+                        </div>
+                    </div>
+
+                    <!-- Formularfeld: E-Mail (type="email" → Browser prüft Format) -->
+                    <div class="form-group">
+                        <label for="text_email">E-Mail *</label>
+                        <div>
+                            <input type="email" class="form-control" id="text_email" name="text_email" tabindex="60" required>
+                        </div>
+                    </div>
+
+                    <!-- Formularfeld: Nachricht (mehrzeiliges Textarea) -->
+                    <div class="form-group">
+                        <label for="text_message">Nachricht *</label>
+                        <div>
+                            <textarea id="text_message" name="text_message" class="form-control" tabindex="70" rows="8" placeholder="Ihre Nachricht bitte" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Pflichtfeld-Hinweis; wird per formular.js bei Fehlern befüllt -->
+                    <p id="pflichtfeld-hinweis" class="form-hint">Felder markiert mit * sind Pflichtfelder.</p>
+
+                    <!-- Formular-Buttons: Zurücksetzen und Absenden -->
+                    <div class="form-submit">
+                        <button type="reset" class="btn-reset" tabindex="80">Zur&uuml;cksetzen</button>&nbsp;<button type="submit" tabindex="90" class="btn-submit">Absenden</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Kontaktdaten (4/12 Spalten) -->
+            <div class="col-sm-12 col-md-4">
+
+                <!-- E-Mail-Adresse (als HTML-Entities kodiert, Schutz vor Spam-Bots) -->
+                <div class="contact-item">
+                  <a rel="nofollow" href="&#109;&#097;&#105;&#108;&#116;&#111;&#058;&#105;&#110;&#102;&#111;&#064;&#108;&#105;&#116;&#116;&#108;&#101;&#115;&#112;&#097;&#099;&#101;&#109;&#097;&#110;&#046;&#100;&#101;" class="item-link">
+                      <i class="far fa-2x fa-envelope mr-4"></i>
+                      <span class="mb-0">&#105;&#110;&#102;&#111;&#064;&#108;&#105;&#116;&#116;&#108;&#101;&#115;&#112;&#097;&#099;&#101;&#109;&#097;&#110;&#046;&#100;&#101;</span>
+                  </a>
+                </div>
+
+                <!-- Adresse mit Google-Maps-Routenlink (öffnet in neuem Tab) -->
+                <div class="contact-item">
+                  <a rel="nofollow" href="https://www.google.de/maps/dir//Elsenheimerstra&szlig;e+7,+80687+M&uuml;nchen/"
+                     target="_blank" class="item-link">
+                      <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
+                      <span class="mb-0">Route zu Unseren Standort</span>
+                  </a>
+                </div>
+
+                <!-- Telefonnummer -->
+                <div class="contact-item">
+                  <a rel="nofollow" href="tel:2556625566" class="item-link">
+                      <i class="fas fa-2x fa-phone-square mr-4"></i>
+                      <span class="mb-0">255-662-5566</span>
+                  </a>
+                </div>
+
+                <!-- Abstandshalter -->
+                <div class="contact-item">&nbsp;</div>
+
+            </div>
+
+        </div><!-- Ende .row -->
+
+      </div>
+
+      <!-- ─────────────────────────────────────────────────
+           FOOTER
+           Zentriert, kleinere Schrift; Links zu Impressum
+           und Datenschutz (rel="nofollow" für SEO)
+      ───────────────────────────────────────────────── -->
+      <footer class="text-center small ds-footer">
+          <p class="mb-0">Copyright &copy; 2026 LittleSpaceMan . <a rel="nofollow" href="impressum.html" title="Impressum">Impressum</a> . <a rel="nofollow" href="datenschutz.html" title="Datenschutz">Datenschutz</a></p>
+        </footer>
+
+    </section>
+    <!-- ENDE: KONTAKT -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         JAVASCRIPT – BIBLIOTHEKEN & INITIALISIERUNG
+         Reihenfolge wichtig: jQuery zuerst, dann Plugins, dann eigener Code
+    ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Font Awesome Icons (CDN) -->
+    <script src="https://kit.fontawesome.com/8bacba900d.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery (Basis für alle folgenden Plugins) -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+
+    <!-- Slick Slider (Karussell für Team und Galerie) -->
+    <script src="js/slick.min.js"></script>
+
+    <!-- Magnific Popup (Lightbox für die Galerie) -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <!-- jQuery Easing (Animations-Kurven für smooth scroll) -->
+    <script src="js/easing.min.js"></script>
+
+    <!-- SinglePageNav (aktiven Navbar-Link beim Scrollen aktualisieren) -->
+    <script src="js/jquery.singlePageNav.min.js"></script>
+
+    <!-- Bootstrap JS (Navbar collapse / Toggle) -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Eigenes Formular-Script (Validierung + mailto-Versand) -->
+    <script src="js/formular.js"></script>
+
+    <script>
+
+      // ── Parallax-Hilfsfunktionen ─────────────────────────────
+
+      /**
+       * Berechnet den vertikalen Versatz für den Parallax-Effekt
+       * abhängig von der aktuellen Fensterhöhe.
+       */
+      function getOffSet(){
+        var _offset = 450;
+        var windowHeight = window.innerHeight;
+
+        if(windowHeight > 500) {
+          _offset = 400;
+        }
+        if(windowHeight > 680) {
+          _offset = 300
+        }
+        if(windowHeight > 830) {
+          _offset = 210;
+        }
+        return _offset;
+      }
+
+      /**
+       * Setzt die CSS background-position eines Elements
+       * basierend auf Scroll-Position und Multiplikator.
+       */
+      function setParallaxPosition($doc, multiplier, $object){
+        var offset = getOffSet();
+        var from_top = $doc.scrollTop(),
+          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
+        $object.css({"background-position" : bg_css });
+      }
+
+      /**
+       * Parallax Typ 1: Scrollt das Hintergrundbild mit dem Seitenscroll mit.
+       * Wird für den Hero-Bereich (.ds-parallax) verwendet.
+       * @param {jQuery} $object    – Zielelement
+       * @param {number} multiplier – Parallax-Geschwindigkeit (0–1)
+       * @param {bool}   forceSet  – true = sofort setzen, false = per scroll-Event
+       * Adapted based on https://codepen.io/roborich/pen/wpAsm
+       */
+      var background_image_parallax = function($object, multiplier, forceSet){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        // $object.css({"background-attatchment" : "fixed"}); // (deaktiviert)
+
+        if(forceSet) {
+          setParallaxPosition($doc, multiplier, $object);
+        } else {
+          $(window).scroll(function(){
+            setParallaxPosition($doc, multiplier, $object);
+          });
+        }
+      };
+
+      /**
+       * Parallax Typ 2: Fixed-background Parallax mit absolutem Versatz.
+       * Wird für Missionen, News und Jobs verwendet.
+       * Auf mobilen Geräten (<768px) wird der Effekt deaktiviert.
+       */
+      var background_image_parallax_2 = function($object, multiplier){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.3;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        $object.css({"background-attachment" : "fixed"});
+
+        $(window).scroll(function(){
+          if($(window).width() > 768) {
+            var firstTop = $object.offset().top,
+                pos = $(window).scrollTop(),
+                yPos = Math.round((multiplier * (firstTop - pos)) - 186);
+
+            var bg_css = 'center ' + yPos + 'px';
+            $object.css({"background-position" : bg_css });
+          } else {
+            // Auf kleinen Bildschirmen: kein Parallax, nur zentrieren
+            $object.css({"background-position" : "center" });
+          }
+        });
+      };
+
+      // ── Initialisierung nach DOM-Ready ───────────────────────
+      $(function(){
+
+        // Parallax-Effekte aktivieren
+        background_image_parallax($(".ds-parallax"), 0.30, false); // Hero
+        background_image_parallax_2($("#jobs"), 0.80);
+        background_image_parallax_2($("#missionen"), 0.80);
+        background_image_parallax_2($("#news"), 0.80);
+
+        // Bei Fenster-Resize: Parallax-Position sofort neu berechnen
+        window.addEventListener('resize', function(){
+          background_image_parallax($(".ds-parallax"), 0.30, true);
+        }, true);
+
+        // Navbar: Klasse "scroll" ab 120px Scroll-Tiefe (weißer Hintergrund)
+        $(window).scroll(function(e){
+          if($(document).scrollTop() > 120) {
+            $('.ds-navbar').addClass("scroll");
+          } else {
+            $('.ds-navbar').removeClass("scroll");
+          }
+        });
+
+        // Mobiles Menü nach Klick auf einen Link automatisch schließen
+        $('#tmNav a').on('click', function(){
+          $('.navbar-collapse').removeClass('show');
+        })
+
+        // SinglePageNav: aktiven Link beim Scrollen zur Sektion hervorheben
+        $('#tmNav').singlePageNav({
+          'easing': 'easeInOutExpo',
+          'speed': 900
+        });
+
+        // Smooth Scroll für alle Anker-Links auf der Seite
+        // Quelle: https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, 'easeInOutExpo', function(){
+              window.location.hash = hash;
+            });
+          }
+        });
+
+        // Magnific Popup: Lightbox für die Bildergalerie initialisieren
+        $('.ds-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: { enabled: true } // Pfeile zum Blättern aktivieren
+        });
+
+        // Slick Karussell: Team-Slider initialisieren
+        // Zeigt 3 Teammitglieder gleichzeitig, responsiv bis 1
+        $('.carousel').slick({
+          dots: true,
+          prevArrow: false,  // Keine Pfeil-Buttons
+          nextArrow: false,
+          infinite: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: { slidesToShow: 2 }
+            },
+            {
+              breakpoint: 768,
+              settings: { slidesToShow: 2 }
+            },
+            {
+              breakpoint: 480,
+              settings: { slidesToShow: 1 }
+            }
+          ]
+        });
+
+        // Slick Slider: Galerie initialisieren
+        // Zeigt 5 Bilder gleichzeitig, responsiv bis 1
+        $('.ds-gallery').slick({
+          dots: true,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+          {
+            breakpoint: 1199,
+            settings: { slidesToShow: 4, slidesToScroll: 2 }
+          },
+          {
+            breakpoint: 991,
+            settings: { slidesToShow: 3, slidesToScroll: 2 }
+          },
+          {
+            breakpoint: 767,
+            settings: { slidesToShow: 2, slidesToScroll: 1 }
+          },
+          {
+            breakpoint: 480,
+            settings: { slidesToShow: 1, slidesToScroll: 1 }
+          }
+        ]
+        });
+
+      }); // Ende DOM-Ready
+
+    </script>
+  </body>
+</html>
